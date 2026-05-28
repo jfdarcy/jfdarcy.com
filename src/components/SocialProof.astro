@@ -1,0 +1,62 @@
+---
+import { formerEmployers, formerClients, buildingProducts } from '../data/home';
+import { site } from '../data/site';
+
+interface Props {
+  part?: 'all' | 'experience' | 'products';
+}
+
+const { part = 'all' } = Astro.props;
+const showExperience = part === 'all' || part === 'experience';
+const showProducts = part === 'all' || part === 'products';
+---
+
+<section class="social-proof" aria-label="Experience and current products">
+  <div class="social-proof__inner">
+    {
+      showExperience && (
+        <div class="social-proof__experience">
+          <div class="social-proof__group">
+            <p class="social-proof__heading">Former employers</p>
+            <ul class="social-proof__list">
+              {formerEmployers.map((employer) => (
+                <li>{employer}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="social-proof__group">
+            <p class="social-proof__heading">Former clients</p>
+            <ul class="social-proof__list">
+              {formerClients.map((client) => (
+                <li>{client}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
+    }
+
+    {
+      showProducts && (
+        <div class:list={['social-proof__products-block', !showExperience && 'social-proof__products-block--standalone']}>
+          <p class="social-proof__heading">Currently building at Felicitous Technologies</p>
+          <ul class="social-proof__products">
+            {
+              buildingProducts.map((product) => (
+                <li class="social-proof__product-card">
+                  <a href={product.href} target="_blank" rel="noopener noreferrer">
+                    <span class="social-proof__product-name">{product.name}</span>
+                    <span class="social-proof__product-desc">{product.description}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="social-proof__company">
+            <a href={site.links.felicitous} target="_blank" rel="noopener noreferrer">felicitous.tech</a>
+          </p>
+        </div>
+      )
+    }
+  </div>
+</section>

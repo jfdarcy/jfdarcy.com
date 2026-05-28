@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  variant?: 'default' | 'matthieu';
+}
+
+const { title, subtitle, image = site.hero.image, variant = 'matthieu' } = Astro.props;
+const { credit } = site.hero;
+const heroStyle = `--hero-image: url('${image}')`;
+const isCompact = variant === 'matthieu' && !subtitle;
+---
+
+<section
+  class:list={['hero', variant === 'matthieu' && 'hero--matthieu', isCompact && 'hero--compact']}
+  style={heroStyle}
+  aria-label="Page header"
+>
+  <div class="hero__inner">
+    <h1>{title}</h1>
+    {subtitle && <p>{subtitle}</p>}
+  </div>
+  <p class="hero__credit">
+    Photo by
+    <a href={credit.photographerUrl} target="_blank" rel="noopener noreferrer">{credit.photographer}</a>
+    on
+    <a href={credit.sourceUrl} target="_blank" rel="noopener noreferrer">{credit.source}</a>
+  </p>
+</section>

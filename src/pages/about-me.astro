@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { formerEmployers, formerClients } from '../data/home';
+import { educationCredentials } from '../data/education';
+---
+
+<BaseLayout title="About Me" heroTitle="About me" wide>
+  <section class="intro-section about-intro">
+    <figure class="intro-section__photo">
+      <img
+        src="/images/about/jf-volendam.jpg"
+        alt="Jean-François D'Arcy smiling beside a statue in Volendam, Netherlands"
+        loading="lazy"
+        width="900"
+        height="1200"
+      />
+      <figcaption class="intro-section__caption">Volendam, Netherlands</figcaption>
+    </figure>
+    <div class="intro-block intro-section__text">
+      <h2>Hey, I'm JF!</h2>
+      <p>
+        I am a UX Research and Human Factors professional living in the Rochester, NY area. In my free time, I enjoy
+        traveling, reading, playing hockey, and spending time with my wife and kids.
+      </p>
+    </div>
+  </section>
+
+  <section class="education-section">
+    <h2>Education</h2>
+    <p>
+      My path moved from psychology through computer science and AI to experimental cognitive psychology—building an
+      interdisciplinary foundation for UX research and human factors work.
+    </p>
+    <ul class="education-list">
+      {
+        educationCredentials.map((cred) => (
+          <li class="education-item">
+            <p class="education-item__degree">
+              {cred.field ? `${cred.degree} · ${cred.field}` : cred.degree}
+            </p>
+            <p class="education-item__institution">{cred.institution}</p>
+            {'note' in cred && cred.note && <p class="education-item__note">{cred.note}</p>}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <h2>Professional Experience</h2>
+  <h3>UX Research and Human Factors Engineering</h3>
+  <p>
+    For the first fifteen years of my career, I had the opportunity to design and conduct research in multiple
+    safety-critical domains (e.g. air traffic control, helicopters, fighter jets, nuclear power), honing my skills in
+    human factors engineering and user research design.
+  </p>
+  <p>
+    For the last ten years, I've applied my expertise in qualitative and quantitative UX research at SaaS B2B
+    companies, focusing on human capital management (payroll and HR-related services) and software testing.
+  </p>
+
+  <section class="employers-section">
+    <div class="employers-section__text">
+      <h3>Former employers</h3>
+      <ul>
+        {formerEmployers.map((employer) => <li>{employer}</li>)}
+      </ul>
+    </div>
+    <figure class="employers-section__photo">
+      <img
+        src="/images/about/former-employers.jpg"
+        alt="People collaborating at a table in a bright, modern office"
+        loading="lazy"
+        width="4897"
+        height="3265"
+      />
+      <figcaption class="photo-credit">
+        Photo by
+        <a
+          href="https://unsplash.com/@yaroslavm?utm_source=jfdarcy&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer">Yaroslav Muzychenko</a>
+        on
+        <a
+          href="https://unsplash.com/?utm_source=jfdarcy&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer">Unsplash</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="clients-section">
+    <div class="clients-section__text">
+      <h3>Former clients</h3>
+      <p>
+        Through employer and contract roles—particularly at Lockheed Martin, ARA, Mosaic ATM, and Titan Corp—I supported
+        programs for U.S. federal agencies and military organizations, including:
+      </p>
+      <ul>
+        {formerClients.map((client) => <li>{client}</li>)}
+      </ul>
+    </div>
+    <figure class="clients-section__montage">
+      <div class="clients-section__montage-grid">
+        <img
+          src="/images/about/former-clients-atlas-air.jpg"
+          alt="Atlas Air cargo aircraft on a runway with an air traffic control tower in the background"
+          loading="lazy"
+          width="3261"
+          height="5798"
+        />
+        <img
+          src="/images/about/former-clients-marine-one.jpg"
+          alt="Marine One helicopter flying over the South Lawn of the White House with the Washington Monument in the background"
+          loading="lazy"
+          width="4520"
+          height="6655"
+        />
+      </div>
+      <figcaption class="photo-credit">
+        Photos by
+        <a
+          href="https://unsplash.com/@shutr?utm_source=jfdarcy&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer">SHUTR</a>
+        and
+        <a
+          href="https://unsplash.com/@nilshuf?utm_source=jfdarcy&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer">Nils Huenerfuerst</a>
+        on
+        <a
+          href="https://unsplash.com/?utm_source=jfdarcy&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer">Unsplash</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <h3>Startup Founder</h3>
+  <p>
+    I am the founder of <a href={site.links.felicitous} target="_blank" rel="noopener noreferrer">Felicitous Technologies</a>,
+    a software startup focused on creating solutions for a more equitable future. Our main project,
+    <a href={site.links.fairHireAi} target="_blank" rel="noopener noreferrer">Fair Hire AI</a>, anonymizes job
+    application materials to reduce unconscious biases and promote fairer hiring.
+  </p>
+  <p>
+    We are also developing
+    <a href={site.links.doUsersGetIt} target="_blank" rel="noopener noreferrer">Do users get it?</a>, an affordable
+    suite of UX research software tools.
+  </p>
+</BaseLayout>

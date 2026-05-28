@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="UX Research Philosophy"
+  heroTitle="My UX research philosophy"
+  heroSubtitle="Strategic alignment and augmented rigor"
+>
+  <p>
+    My philosophy is that a successful user research program is built on a consistent cadence of inquiries that
+    directly align with business and product objectives. This page covers how I do that in practice—and how I use AI as
+    a co-researcher to strengthen rigor.
+  </p>
+
+  <nav class="philosophy-nav" aria-label="On this page">
+    <a href="#research-principles">Research principles</a>
+    <a href="#co-researcher">Augmented rigor: co-researcher model</a>
+  </nav>
+
+  <section id="research-principles" class="philosophy-section">
+    <h2>Research principles</h2>
+    <p>This approach requires us to:</p>
+    <ol>
+    <li>
+      <strong>Ground research in strategic goals</strong> – Ensure every study connects to key business priorities and
+      product decisions, so insights directly inform strategy and drive measurable impact.
+    </li>
+    <li>
+      <strong>Employ a variety of research methods</strong> – Draw from usability tests, interviews, surveys, web
+      analytics, participatory design, and other approaches to answer different types of questions.
+    </li>
+    <li>
+      <strong>Adapt our research to different scopes</strong> – Scale our methods appropriately, whether we're examining
+      a specific feature, an entire application, or broader user needs and market opportunities.
+    </li>
+    <li>
+      <strong>Blend various data sources</strong> – Combine attitudinal insights (what people say) with behavioral data
+      (what people do) to build a complete, nuanced understanding of user experience.
+    </li>
+    <li>
+      <strong>Actively involve cross-functional partners</strong> – Engage team members from product, design, customer
+      experience, engineering, and other disciplines at every stage of the process to ensure shared understanding and
+      commitment to action.
+    </li>
+    <li>
+      <strong>Translate insights into action</strong> – Deliver research findings in clear, actionable formats that
+      empower teams to make confident decisions and track how those insights influence product outcomes.
+    </li>
+    </ol>
+  </section>
+
+  <section id="co-researcher" class="philosophy-section">
+    <h2>Augmented Rigor: The Co-Researcher Model</h2>
+  <p>
+    To enhance the depth and objectivity of my work, I treat Artificial Intelligence (i.e., generative AI tools) as a
+    tireless "co-researcher" rather than a simple automation tool. My goal is not to work faster, but to leverage AI to
+    challenge my own assumptions and ensure the highest quality of insights.
+  </p>
+  <ul>
+    <li>
+      <strong>Collaborative Design:</strong> During the planning phase, I use AI to stress-test my research instruments.
+      I draft my interview guides independently, then task the AI with generating a parallel version based on the same
+      objectives. This gap analysis surfaces edge cases and creative angles I might have otherwise overlooked.
+    </li>
+    <li>
+      <strong>Comparative Analysis:</strong> For qualitative data, I conduct my own thematic analysis and then prompt the
+      AI to perform its own independent analysis of the raw transcripts.
+    </li>
+    <li>
+      <strong>Validation of Discrepancies:</strong> When the AI identifies a theme that differs from my own, I treat it as
+      a critical inflection point. I return to the raw data for a secondary audit to validate the logic. This
+      "triangulation" ensures that every finding in my final report has been vetted twice, minimizing researcher bias
+      and ensuring no stone is left unturned.
+    </li>
+  </ul>
+  <p>
+    I've begun codifying this approach in an open
+    <a href={site.links.aiToolkit} target="_blank" rel="noopener noreferrer">AI UX Research Toolkit</a>, that stress-test
+    research plans, interview guides, and synthesis at the moments where bias is most likely to creep in.
+  </p>
+  </section>
+</BaseLayout>

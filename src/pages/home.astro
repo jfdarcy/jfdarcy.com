@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatsBar from '../components/StatsBar.astro';
+import SocialProof from '../components/SocialProof.astro';
+import HomeCta from '../components/HomeCta.astro';
+import { site } from '../data/site';
+import { aiResearchToolkit } from '../data/home';
+import { portfolioItems } from '../data/site';
+
+const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 3);
+---
+
+<BaseLayout
+  title={site.name}
+  description="UX researcher and human factors engineer with 25+ years of experience. Evidence-based research in safety-critical systems, enterprise SaaS, and product building."
+  heroTitle="UX researcher & human factors engineer"
+  heroSubtitle="Helping organizations make better product decisions through evidence-based research. I also build products that put those insights into practice."
+  wide
+>
+  <Fragment slot="after-hero">
+    <StatsBar />
+  </Fragment>
+
+  <div class="intro-block">
+    <h2>Hi, I'm JF!</h2>
+    <p>
+      I help teams decide what to build—and validate whether it works—using mixed-methods research grounded in
+      cognitive science and human factors. I've codified my AI co-researcher approach in an open
+      <a href={aiResearchToolkit.href} target="_blank" rel="noopener noreferrer">AI UX Research Toolkit</a>.
+    </p>
+    <HomeCta />
+  </div>
+
+  <section class="featured-work">
+    <h2 class="featured-work__heading">Selected work</h2>
+    <div class="featured-work__grid">
+      {
+        featuredWork.map((item) => (
+          <a class="featured-work__card" href={item.href}>
+            <div class="featured-work__image">
+              <img src={item.image} alt={item.imageAlt} loading="lazy" width="600" height="450" />
+            </div>
+            <div class="featured-work__text">
+              <p class="featured-work__method">{item.subtitle}</p>
+              <p class="featured-work__title">{item.title}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <p class="featured-work__more"><a href="/portfolio">View all work &rarr;</a></p>
+  </section>
+
+  <SocialProof part="experience" />
+  <SocialProof part="products" />
+</BaseLayout>

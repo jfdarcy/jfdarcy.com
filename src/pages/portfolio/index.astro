@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortfolioCard from '../../components/PortfolioCard.astro';
+import { portfolioItems } from '../../data/site';
+---
+
+<BaseLayout title="Portfolio" heroTitle="Selected Work" wide>
+  {
+    portfolioItems.map((item, index) => (
+      <PortfolioCard
+        title={item.title}
+        subtitle={item.subtitle}
+        href={item.href}
+        image={item.image}
+        imageAlt={item.imageAlt}
+        credit={item.credit}
+        inProgress={'inProgress' in item ? item.inProgress : false}
+        reverse={index % 2 === 1}
+      />
+    ))
+  }
+</BaseLayout>

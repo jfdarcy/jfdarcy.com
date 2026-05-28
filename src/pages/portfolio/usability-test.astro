@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Usability test" heroTitle="RITE usability test">
+  <h2>Project Overview</h2>
+  <p><strong>Product:</strong> Fair Hire AI resume anonymization prototype</p>
+  <p><strong>Role:</strong> Founder &amp; UX Researcher</p>
+  <p><strong>Method:</strong> RITE usability testing</p>
+  <p><strong>Participants:</strong> X hiring managers / HR professionals</p>
+  <p><strong>Timeline:</strong> X weeks</p>
+  <p><strong>Outcome:</strong> Redesigned workflow and multi-file support</p>
+
+  <h2>Background</h2>
+  <p>Hiring managers support blind hiring in principle, but existing tools are cumbersome.</p>
+  <p>
+    We needed to determine whether recruiters could intuitively anonymize resumes using our prototype without training.
+  </p>
+
+  <h2>Objectives/Research Questions</h2>
+  <ul>
+    <li>Do hiring managers perceive value in an automated anonymization tool?</li>
+    <li>Can users successfully complete the anonymization workflow without guidance?</li>
+    <li>Where do users encounter confusion or friction in the process?</li>
+  </ul>
+
+  <h2>Approach</h2>
+  <p><strong>Methodology:</strong> RITE (Rapid Iterative Testing and Evaluation)</p>
+  <p><strong>Participants:</strong> 12 hiring managers and HR professionals</p>
+  <p><strong>Session format:</strong></p>
+  <ul>
+    <li>5-minute contextual interview</li>
+    <li>task-based usability test</li>
+    <li>retrospective probing</li>
+  </ul>
+  <p><strong>Tasks</strong></p>
+  <ul>
+    <li>Upload a resume</li>
+    <li>Anonymize the file</li>
+    <li>Download the anonymized version</li>
+  </ul>
+
+  <h2>Results (Metrics)</h2>
+  <table class="two-col-table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Success Rate</th>
+        <th>Observations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Upload resume</td>
+        <td>60%</td>
+        <td>unclear first step, expected multi-file support</td>
+      </tr>
+      <tr>
+        <td>Anonymize file</td>
+        <td>70%</td>
+        <td>confusion about workflow, expected to select which data to mask</td>
+      </tr>
+      <tr>
+        <td>Download file</td>
+        <td>85%</td>
+        <td>minor issues</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Results were captured in a rainbow sheet to detect trends.</p>
+
+  <h3>Step 1: Upload file(s)</h3>
+  <img
+    class="case-study-image"
+    src="/images/portfolio/fair-hire-ai/step-1.png"
+    alt="Fair Hire AI wizard step 1: upload files to anonymize"
+    loading="lazy"
+    width="1200"
+    height="700"
+  />
+
+  <h2>RITE Updates</h2>
+  <h2>Design Impact</h2>
+  <p>The RITE sessions led to three major changes:</p>
+  <ol>
+    <li>
+      <strong>Guided 3-step workflow</strong><br />
+      Upload → Select anonymization → Download
+    </li>
+    <li><strong>Batch processing</strong><br />Users can upload multiple resumes</li>
+    <li><strong>Selectable anonymization fields</strong><br />Users control which data to mask</li>
+  </ol>
+
+  <h3>Step 2: Select information to mask</h3>
+  <img
+    class="case-study-image"
+    src="/images/portfolio/fair-hire-ai/step-2.png"
+    alt="Fair Hire AI wizard step 2: select personal information to redact"
+    loading="lazy"
+    width="1200"
+    height="700"
+  />
+
+  <h3>Step 3: Anonymize file(s)</h3>
+  <img
+    class="case-study-image"
+    src="/images/portfolio/fair-hire-ai/step-3.png"
+    alt="Fair Hire AI wizard step 3: review and anonymize uploaded files"
+    loading="lazy"
+    width="1200"
+    height="700"
+  />
+
+  <h2>Retrospective</h2>
+  <h3>What I Learned</h3>
+  <ul>
+    <li>
+      RITE testing is highly effective for early-stage startup prototypes where UI changes can be implemented quickly.
+    </li>
+    <li>Recruiters expect bulk workflows, reflecting real hiring practices.</li>
+    <li>Content clarity was as important as interaction design.</li>
+  </ul>
+  <h3>Next Steps</h3>
+  <ul>
+    <li>Conduct validation testing on the updated prototype</li>
+    <li>Evaluate recruiter trust in automated anonymization</li>
+  </ul>
+</BaseLayout>

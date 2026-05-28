@@ -1,0 +1,63 @@
+---
+import { searchPages } from '../data/site';
+---
+
+<div class="search-overlay" id="search-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Site search">
+  <div class="search-panel">
+    <input id="search-input" type="search" placeholder="Search pages..." autocomplete="off" aria-label="Search pages" />
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
+<script define:vars={{ searchPages }}>
+  const overlay = document.getElementById('search-overlay');
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const openBtn = document.getElementById('search-open');
+
+  function render(query) {
+    if (!results) return;
+    const q = query.trim().toLowerCase();
+    const matches = !q
+      ? searchPages
+      : searchPages.filter(
+          (page) =>
+            page.title.toLowerCase().includes(q) ||
+            page.description.toLowerCase().includes(q) ||
+            page.href.toLowerCase().includes(q),
+        );
+
+    results.innerHTML = matches
+      .map(
+        (page) =>
+          `<li><a href="${page.href}"><strong>${page.title}</strong><small>${page.description}</small></a></li>`,
+      )
+      .join('');
+  }
+
+  function openSearch() {
+    overlay?.setAttribute('data-open', 'true');
+    input?.focus();
+    render(input?.value ?? '');
+  }
+
+  function closeSearch() {
+    overlay?.setAttribute('data-open', 'false');
+  }
+
+  openBtn?.addEventListener('click', openSearch);
+
+  overlay?.addEventListener('click', (event) => {
+    if (event.target === overlay) closeSearch();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeSearch();
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      openSearch();
+    }
+  });
+
+  input?.addEventListener('input', () => render(input.value));
+</script>

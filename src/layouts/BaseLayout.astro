@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import SiteSearch from '../components/SiteSearch.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  heroImage?: string;
+  heroVariant?: 'default' | 'matthieu';
+  showHero?: boolean;
+  wide?: boolean;
+}
+
+const {
+  title,
+  description = 'UX researcher and human factors engineer helping organizations make better product decisions through evidence-based research.',
+  heroTitle,
+  heroSubtitle,
+  heroImage = site.hero.image,
+  heroVariant = 'matthieu',
+  showHero = true,
+  wide = false,
+} = Astro.props;
+
+const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={`${site.url}${site.hero.image}`} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <SiteHeader />
+    {showHero && heroTitle && (
+      <HeroBanner title={heroTitle} subtitle={heroSubtitle} image={heroImage} variant={heroVariant} />
+    )}
+    <slot name="after-hero" />
+    <main id="main-content" class:list={['content', wide && 'content--wide']}>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/home">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/about-me">About Me</a>
+        <a href="/ux-research-philosophy">UX Research Philosophy</a>
+        <a href="/leadership">Leadership</a>
+        <a href={`mailto:${site.email}`}>Contact</a>
+      </nav>
+      <SocialLinks />
+    </footer>
+    <SiteSearch />
+  </body>
+</html>
