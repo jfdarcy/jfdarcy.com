@@ -20,8 +20,8 @@ import { educationCredentials } from '../data/education';
     <div class="intro-block intro-section__text">
       <h2>Hey, I'm JF!</h2>
       <p>
-        I am a UX Research and Human Factors professional living in the Rochester, NY area. In my free time, I enjoy
-        traveling, reading, playing hockey, and spending time with my wife and kids.
+        I am a UX researcher, human factors engineer, and product builder living in the Rochester, NY area. In my free
+        time, I enjoy traveling, reading, playing hockey, and spending time with my wife and kids.
       </p>
     </div>
   </section>
@@ -30,14 +30,14 @@ import { educationCredentials } from '../data/education';
     <h2>Education</h2>
     <p>
       My path moved from psychology through computer science and AI to experimental cognitive psychology—building an
-      interdisciplinary foundation for UX research and human factors work.
+      interdisciplinary foundation for UX research, human factors work, and product building.
     </p>
     <ul class="education-list">
       {
         educationCredentials.map((cred) => (
           <li class="education-item">
             <p class="education-item__degree">
-              {cred.field ? `${cred.degree} · ${cred.field}` : cred.degree}
+              {cred.field ? `${cred.degree}, ${cred.field}` : cred.degree}
             </p>
             <p class="education-item__institution">{cred.institution}</p>
             {'note' in cred && cred.note && <p class="education-item__note">{cred.note}</p>}

@@ -1,6 +1,5 @@
 ---
 import { formerEmployers, formerClients, buildingProducts } from '../data/home';
-import { site } from '../data/site';
 
 interface Props {
   part?: 'all' | 'experience' | 'products';
@@ -39,7 +38,7 @@ const showProducts = part === 'all' || part === 'products';
     {
       showProducts && (
         <div class:list={['social-proof__products-block', !showExperience && 'social-proof__products-block--standalone']}>
-          <h2 class="section-heading">Currently building at Felicitous Technologies</h2>
+          <h2 class="section-heading">What I'm Building</h2>
           <ul class="social-proof__products">
             {
               buildingProducts.map((product) => (
@@ -87,9 +86,6 @@ const showProducts = part === 'all' || part === 'products';
               ))
             }
           </ul>
-          <p class="social-proof__company">
-            <a href={site.links.felicitous} target="_blank" rel="noopener noreferrer">felicitous.tech</a>
-          </p>
         </div>
       )
     }

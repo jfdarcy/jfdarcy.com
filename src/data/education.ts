@@ -3,7 +3,7 @@ export const educationCredentials = [
     degree: 'Ph.D.',
     field: 'Experimental cognitive psychology',
     institution: 'Université de Montréal',
-    note: 'Cognitive science & AI program · Study abroad, University of Connecticut',
+    note: 'Cognitive science & AI program, Study abroad at University of Connecticut',
   },
   {
     degree: 'M.S.',
