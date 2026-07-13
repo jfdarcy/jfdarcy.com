@@ -2,12 +2,14 @@
 import { homeStats } from '../data/home';
 ---
 
-<section class="stats-bar" aria-label="Experience at a glance">
+<section class="stats-bar" aria-label="Proof points">
   <div class="stats-bar__inner">
     {
       homeStats.map((stat) => (
         <div class="stats-bar__item">
-          <p class="stats-bar__value">{stat.value}</p>
+          <p class:list={['stats-bar__value', 'compact' in stat && stat.compact && 'stats-bar__value--compact']}>
+            {stat.value}
+          </p>
           <p class="stats-bar__label">{stat.label}</p>
         </div>
       ))

@@ -13,8 +13,7 @@ const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 
 <BaseLayout
   title={site.name}
   description="UX researcher and human factors engineer with 25+ years of experience. Evidence-based research in safety-critical systems, enterprise SaaS, and product building."
-  heroTitle="UX researcher & human factors engineer"
-  heroSubtitle="Helping organizations make better product decisions through evidence-based research. I also build products that put those insights into practice."
+  heroTitle="Building better products by combining cognitive science, rigorous research, and AI."
   wide
 >
   <Fragment slot="after-hero">
@@ -31,8 +30,10 @@ const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 
     <HomeCta />
   </div>
 
+  <SocialProof part="products" />
+
   <section class="featured-work">
-    <h2 class="featured-work__heading">Selected work</h2>
+    <h2 class="section-heading">Selected work</h2>
     <div class="featured-work__grid">
       {
         featuredWork.map((item) => (
@@ -52,5 +53,4 @@ const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 
   </section>
 
   <SocialProof part="experience" />
-  <SocialProof part="products" />
 </BaseLayout>

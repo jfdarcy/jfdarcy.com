@@ -1,10 +1,22 @@
 import { site } from './site';
 
 export const homeStats = [
-  { value: '25+', label: 'Years in UX & human factors' },
-  { value: 'Ph.D.', label: 'Cognitive science & AI' },
-  { value: '5', label: 'Industries served' },
-  { value: '6+', label: 'Research methods' },
+  {
+    value: '25+ years',
+    label: 'Building products around human behavior',
+  },
+  {
+    value: 'Interdisciplinary',
+    label: 'From aviation and defense to SaaS and AI products',
+  },
+  {
+    value: 'Ph.D.',
+    label: 'Experimental Cognitive Psychology',
+  },
+  {
+    value: 'Founder',
+    label: 'Building AI products and UX research tools',
+  },
 ] as const;
 
 export const formerEmployers = [
@@ -31,12 +43,50 @@ export const buildingProducts = [
   {
     name: 'Fair Hire AI',
     href: site.links.fairHireAi,
-    description: 'AI-assisted hiring workflows',
+    linkLabel: 'fairhireai.com',
+    description: 'Fair tools for everyone in hiring',
+    audiences: [
+      {
+        label: 'For employers',
+        text: 'Reduce bias in hiring—anonymize resumes, mask identifying details, write inclusive job postings, and ask safer interview questions.',
+      },
+      {
+        label: 'For job seekers',
+        text: 'Query Builder is live—build Boolean queries for direct ATS listings on Lever, Greenhouse, Ashby, and more.',
+      },
+    ],
   },
   {
     name: 'Do users get it?',
     href: site.links.doUsersGetIt,
-    description: 'Usability testing for product teams',
+    linkLabel: 'dousersgetit.com',
+    description: 'Affordable UX research tools for teams of any size',
+    audiences: [
+      {
+        label: 'Coming soon',
+        text: '5-second test, card sort, first-click test, and AI-assisted heuristic review—four tools to help you understand your users.',
+      },
+      {
+        label: 'Pay as you go',
+        text: 'No subscriptions. Pay only for what you use.',
+      },
+    ],
+  },
+  {
+    name: 'AI UX Research Toolkit',
+    href: site.links.aiToolkit,
+    linkLabel: 'Explore the toolkit',
+    description: 'Augmented rigor and the co-researcher model',
+    audiences: [
+      {
+        label: 'Live now',
+        text: 'UX Research Interview Refiner—co-researcher that stress-tests draft guides for blind spots, framing bias, and missed angles.',
+      },
+      {
+        label: 'In development',
+        text: 'Thematic Analyzer, Research Plan Challenger, and Insight Rigidity Checker—tools that add friction where human judgment is most at risk.',
+      },
+    ],
   },
 ] as const;
 
