@@ -84,7 +84,7 @@ export const buildingProducts = [
       },
       {
         label: 'In development',
-        text: 'Thematic Analyzer, Research Plan Challenger, and Insight Rigidity Checker—tools that add friction where human judgment is most at risk.',
+        text: 'Thematic Analyzer, Research Plan Challenger, and Insight Rigidity Checker—tools that challenge researcher assumptions and strengthen insight quality.',
       },
     ],
   },

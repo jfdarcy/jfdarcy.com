@@ -4,7 +4,6 @@ import StatsBar from '../components/StatsBar.astro';
 import SocialProof from '../components/SocialProof.astro';
 import HomeCta from '../components/HomeCta.astro';
 import { site } from '../data/site';
-import { aiResearchToolkit } from '../data/home';
 import { portfolioItems } from '../data/site';
 
 const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 3);
@@ -23,9 +22,15 @@ const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 
   <div class="intro-block">
     <h2>Hi, I'm JF!</h2>
     <p>
-      I help teams decide what to build—and validate whether it works—using mixed-methods research grounded in
-      cognitive science and human factors. I've codified my AI co-researcher approach in an open
-      <a href={aiResearchToolkit.href} target="_blank" rel="noopener noreferrer">AI UX Research Toolkit</a>.
+      I'm a cognitive scientist, UX researcher, and product builder who helps organizations make better product
+      decisions. Over the past 25+ years, I've worked across aerospace, defense, enterprise software, and AI,
+      combining rigorous research with practical product thinking to reduce uncertainty and improve user experiences.
+    </p>
+    <p>
+      Today, I'm expanding that work by building AI-enabled products and workflows that accelerate research, support
+      better decisions, and turn insights into action. Whether leading strategic research, developing new products, or
+      experimenting with emerging technologies, my goal remains the same: helping teams build products people understand,
+      trust, and value.
     </p>
     <HomeCta />
   </div>
@@ -33,7 +38,7 @@ const featuredWork = portfolioItems.filter((item) => !item.inProgress).slice(0, 
   <SocialProof part="products" />
 
   <section class="featured-work">
-    <h2 class="section-heading">Selected work</h2>
+    <h2 class="section-heading">Selected UX research work</h2>
     <div class="featured-work__grid">
       {
         featuredWork.map((item) => (
