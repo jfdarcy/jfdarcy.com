@@ -18,6 +18,7 @@ export const site = {
     fairHireAi: 'http://www.fairhireai.com',
     doUsersGetIt: 'https://www.dousersgetit.com',
     aiToolkit: 'https://jfdarcy.github.io/ai-ux-research-toolkit/',
+    startupToolkit: 'https://startup-toolkit-landing-page.vercel.app/',
     uxpaArticle: 'https://uxpamagazine.org/aligning_ux_business_goals/',
     literatureReviewSlides:
       'https://docs.google.com/presentation/d/1cwCK5EKy34htOQ1g6rsLT-p6Ahbx3Haz6lRMD54b7JM/present',

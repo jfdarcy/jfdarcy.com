@@ -88,6 +88,30 @@ export const buildingProducts = [
       },
     ],
   },
+  {
+    name: 'Startup Toolkit',
+    href: site.links.startupToolkit,
+    linkLabel: 'Visit Startup Toolkit',
+    description: 'Essential tools for founders — launch smarter and build products people want',
+    audiences: [
+      {
+        label: 'Available now',
+        text: 'NotifyMe — capture interest before you launch with waitlists and launch notifications.',
+      },
+      {
+        label: 'Coming soon — UX research tools',
+        text: '5-second test, card sort, first-click test, and AI-assisted heuristic review—pay as you go, no subscriptions.',
+      },
+      {
+        label: 'Coming soon — AI toolkit',
+        text: 'Thematic Analyzer, Research Plan Challenger, and Insight Rigidity Checker—tools that challenge assumptions and strengthen insight quality.',
+      },
+      {
+        label: 'Coming soon — Fair Hire AI for employers',
+        text: 'Anonymize resumes, mask identifying details, write inclusive job postings, and ask safer interview questions.',
+      },
+    ],
+  },
 ] as const;
 
 export const aiResearchToolkit = {
