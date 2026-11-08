@@ -1,21 +1,29 @@
 import { site } from './site';
 
+export const currentRole = {
+  employer: 'Peraton',
+  title: 'Design Engineering Senior Advisor',
+  program: "FAA Alaska Automation Capability (AAC), Brand New Air Traffic Control System (BNATCS)",
+  summary:
+    "Applying human factors engineering and user-centered design to modernize Alaska's 17 Flight Service Stations.",
+} as const;
+
 export const homeStats = [
   {
     value: '25+ years',
-    label: 'Building products around human behavior',
+    label: 'Optimizing complex human-machine systems',
   },
   {
     value: 'Interdisciplinary',
-    label: 'From aviation and defense to SaaS and AI products',
+    label: 'Air traffic, defense, nuclear, SaaS, and AI products',
   },
   {
     value: 'Ph.D.',
     label: 'Experimental Cognitive Psychology',
   },
   {
-    value: 'Founder',
-    label: 'Building AI products and UX research tools',
+    value: currentRole.employer,
+    label: `${currentRole.title}, FAA air traffic modernization`,
   },
 ] as const;
 

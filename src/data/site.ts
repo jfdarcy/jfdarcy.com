@@ -46,8 +46,8 @@ export const navItems = [
 ] as const;
 
 export const searchPages = [
-  { title: 'Home', href: '/home', description: 'UX researcher and human factors engineer with 25+ years of experience in safety-critical systems, enterprise SaaS, and product building' },
-  { title: 'About Me', href: '/about-me', description: 'Background, education (Ph.D., UdeM, UQAM), and professional experience' },
+  { title: 'Home', href: '/home', description: 'Human factors engineer and cognitive scientist at Peraton supporting FAA air traffic modernization, with 25+ years in safety-critical systems, enterprise SaaS, and product building' },
+  { title: 'About Me', href: '/about-me', description: 'Background, education (Ph.D., UdeM, UQAM), current role at Peraton, and professional experience in human factors engineering and UX research' },
   {
     title: 'UX Research Philosophy',
     href: '/ux-research-philosophy',

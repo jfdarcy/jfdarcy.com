@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
-import { formerEmployers, formerClients } from '../data/home';
+import { currentRole, formerEmployers, formerClients } from '../data/home';
 import { educationCredentials } from '../data/education';
 ---
 
@@ -20,7 +20,7 @@ import { educationCredentials } from '../data/education';
     <div class="intro-block intro-section__text">
       <h2>Hey, I'm JF!</h2>
       <p>
-        I am a UX researcher, human factors engineer, and product builder living in the Rochester, NY area. In my free
+        I am a cognitive scientist, human factors engineer, and product builder living in the Rochester, NY area. In my free
         time, I enjoy traveling, reading, playing hockey, and spending time with my wife and kids.
       </p>
     </div>
@@ -48,6 +48,15 @@ import { educationCredentials } from '../data/education';
   </section>
 
   <h2>Professional Experience</h2>
+  <h3>Current role</h3>
+  <p>
+    I serve as a {currentRole.title} at {currentRole.employer}, supporting the {currentRole.program} program.
+    {currentRole.summary} Grounded in a Ph.D. in Experimental Cognitive Psychology, I use quantitative and
+    qualitative methods, psychophysical evaluation, and human-in-the-loop simulations to de-risk design decisions and
+    inform system requirements, and I translate user tasks into formal specifications that comply with federal and
+    military standards such as FAA HF-STD-001B and MIL-STD-1472.
+  </p>
+
   <h3>UX Research and Human Factors Engineering</h3>
   <p>
     For the first fifteen years of my career, I had the opportunity to design and conduct research in multiple
@@ -55,12 +64,17 @@ import { educationCredentials } from '../data/education';
     human factors engineering and user research design.
   </p>
   <p>
-    For the last ten years, I've applied my expertise in qualitative and quantitative UX research at SaaS B2B
-    companies, focusing on human capital management (payroll and HR-related services) and software testing.
+    Before returning to safety-critical work, I spent ten years applying my expertise in qualitative and quantitative
+    UX research at SaaS B2B companies, focusing on human capital management (payroll and HR-related services) and
+    software testing.
   </p>
 
   <section class="employers-section">
     <div class="employers-section__text">
+      <h3>Current employer</h3>
+      <ul>
+        <li>{currentRole.employer}</li>
+      </ul>
       <h3>Former employers</h3>
       <ul>
         {formerEmployers.map((employer) => <li>{employer}</li>)}
@@ -137,9 +151,9 @@ import { educationCredentials } from '../data/education';
     </figure>
   </section>
 
-  <h3>Startup Founder</h3>
+  <h3>Side projects</h3>
   <p>
-    I am the founder of <a href={site.links.felicitous} target="_blank" rel="noopener noreferrer">Felicitous Technologies</a>,
+    Outside of my work at {currentRole.employer}, I founded <a href={site.links.felicitous} target="_blank" rel="noopener noreferrer">Felicitous Technologies</a>,
     a software startup focused on creating solutions for a more equitable future. Our main project,
     <a href={site.links.fairHireAi} target="_blank" rel="noopener noreferrer">Fair Hire AI</a>, anonymizes job
     application materials to reduce unconscious biases and promote fairer hiring.
